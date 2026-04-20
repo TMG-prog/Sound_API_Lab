@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Audio Player</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+   
+</head>
+<body>
+
+<div class="player">
+    <h3 id="title">Now playing</h3>
+<div class="upload-box">
+    <input type="file" id="fileInput" accept="audio/*" hidden>
+
+    <button id="uploadBtn">
+    <i class="fas fa-upload"></i> Upload
+</button>
+
+    <p id="fileName">No file selected</p>
+</div>
+    <!-- Controls -->
+<div>
+    <button onclick="togglePlay()" id="playBtn" title="Play/Pause">
+        <i class="fas fa-play"></i>
+    </button>
+    <button onclick="toggleMute()" id="muteBtn" title="Mute">
+        <i class="fas fa-volume-up"></i>
+    </button>
+</div>
+
+<!-- Seek bar -->
+<p id="currentTime" style="color: #93a1a1; font-size: 14px; margin: 8px 0 4px;">0:00 / 0:00</p>
+<input type="range" id="seekBar" min="0" step="0.1" value="0">
+
+<!-- Volume -->
+<div style="display: flex; align-items: center; gap: 8px; margin-top: 12px;">
+    <i class="fas fa-volume-down" style="color: #93a1a1;"></i>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="1" style="flex: 1;">
+    <i class="fas fa-volume-up" style="color: #93a1a1;"></i>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
